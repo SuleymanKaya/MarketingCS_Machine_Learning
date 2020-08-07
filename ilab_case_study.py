@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.svm import SVC, SVR
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
 
 all_data = pd.read_csv("term-deposit-marketing-2020.csv")
 
@@ -83,17 +83,17 @@ y_pred = classifier.predict(x_test)
 #Confusion Matrix
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
+print('Accuracy Score:', accuracy_score(y_test, y_pred))
 
 #5-Fold Cross Validation
 success = cross_val_score(estimator = classifier, X=x_train, y=y_train , cv = 5)
-print("Success Rate: ")
-print(success.mean()*100)
+print("ML Model Success Rate: ", success.mean()*100)
 #print(success.std())
 
 """
 Note1:
 Case Study Success Metric : Hit %81 or above accuracy by evaluating with 5-fold cross validation and reporting the average performance score.
-Result Success Metric: %93
+Result Success Metrics: Accuracy Score and ML Model Success Rate is "%93".
 """
 
 #Abone Olma Olasılığı En Yüksek 10 Müşteri = interested_10customers
@@ -113,18 +113,3 @@ Bonuses:
 - We are also interested in finding customers who are more likely to buy the investment product. Determine the segment(s) of customers our client should prioritize.
 - What makes the customers buy? Tell us which feature we should be focusing more on.
 """
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
