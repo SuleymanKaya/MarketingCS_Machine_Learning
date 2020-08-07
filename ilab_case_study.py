@@ -83,7 +83,7 @@ y_pred = classifier.predict(x_test)
 #Confusion Matrix
 cm = confusion_matrix(y_test, y_pred)
 print(cm)
-print('Accuracy Score:', accuracy_score(y_test, y_pred))
+print('Accuracy Score:', accuracy_score(y_test, y_pred)*100)
 
 #5-Fold Cross Validation
 success = cross_val_score(estimator = classifier, X=x_train, y=y_train , cv = 5)
