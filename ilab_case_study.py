@@ -93,7 +93,7 @@ print("ML Model Success Rate: ", success.mean()*100)
 """
 Note1:
 Case Study Success Metric : Hit %81 or above accuracy by evaluating with 5-fold cross validation and reporting the average performance score.
-Result Success Metrics: Accuracy Score and ML Model Success Rate is "%93".
+Result Success Metrics: Accuracy Score and ML Model Success Rate are "%93".
 """
 
 #Abone Olma Olasılığı En Yüksek 10 Müşteri = interested_10customers
