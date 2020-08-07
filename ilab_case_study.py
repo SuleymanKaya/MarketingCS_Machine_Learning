@@ -20,16 +20,16 @@ all_data_types= all_data.dtypes
 all_data_details= all_data.describe()
 all_data_details2= all_data.describe(include="all")
 
-#Eksik Verilen En Sık Bulunan Veriler İle Değiştirilmesi
+#Eksik Verilerin En Sık Bulunan Veriler İle Değiştirilmesi
 all_data.replace("unknown", np.nan, inplace= True)
 all_data = all_data.apply(lambda x:x.fillna(x.value_counts().index[0]))
 #Most_Frequent_Data = all_data['job'].value_counts().argmax()
 
 """
-Eksik Verilen En Sık Bulunan Veriler İle Değiştirilmeden Önceki Sayıları
+Eksik Verilerin En Sık Bulunan Veriler İle Değiştirilmeden Önceki Sayıları
 Eksik (unknown) Veri Sayısı - job: 235 | education: 1531 | contact:12765
 """
-#Eksik Verilen Olup Olmadığının Tespiti (Varsa "True" olarak veri setinde gösterir)
+#Eksik Verilerin Olup Olmadığının Tespiti (Varsa "True" olarak veri setinde gösterir)
 missing_data = all_data.isnull()
 
 #Her Alan İçin Eksik Verilen Gösterimi
@@ -38,7 +38,7 @@ for column in missing_data.columns.values.tolist():
     print(missing_data[column].value_counts())
     print("")
 
-# Kopyalama İşlemi
+#Kopyalama İşlemi
 all_data2 = all_data
 
 #Encoder: Kategorik Verilerin Sayısallıştırılması
@@ -48,10 +48,10 @@ all_data2 = all_data2.apply(LabelEncoder().fit_transform)
 marital_contact_data = all_data2[["marital", "contact"]]
 all_data3 = all_data2.drop(["marital", "contact"], 1)
 
-# Kopyalama İşlemi
+#Kopyalama İşlemi
 all_data4 = marital_contact_data 
 
-# OneHotEncoder İşlemi
+#OneHotEncoder İşlemi
 ohe = OneHotEncoder(categorical_features='all')
 all_data4 = ohe.fit_transform(all_data4).toarray()
 
