@@ -96,7 +96,7 @@ for column in x_input:
 
 p_and_corr.index = x_input.columns
 
-#İlişki Çok Az Olan Alanların Veri Setinden Çıkarılması İşlemi
+#İlişkisi Çok Az Olan Alanların Veri Setinden Çıkarılması İşlemi
 x_input = x_input.drop(unrelated_data,1)
  
 print("-----------------------------------------------------------------")
@@ -138,11 +138,11 @@ Result Success Metrics: Accuracy Score and ML Model Success Rate are "%93".
 """
 
 
-#Abone Olma Olasılığı En Yüksek Müşteriler (Büyüktün Küçüğe Doğru) = interested_10customers
+#Abone Olma Olasılığı En Yüksek Müşteriler (Büyüktün Küçüğe Doğru) = interested_customers
 dvr_reg= SVR(kernel="rbf")
 dvr_reg.fit(x_train, y_train)
 y_pred2 = dvr_reg.predict(x_test)
-interested_10customers = pd.DataFrame(data = y_pred2, columns=['Potantial_Customers']).sort_values('Potantial_Customers', ascending=False)
+interested_customers = pd.DataFrame(data = y_pred2, columns=['Potantial_Customers']).sort_values('Potantial_Customers', ascending=False)
 
 #Müşterilerin Ürünü Satın Almasında En Çok Etkili Olan Özellikler
 #Sırasıyla En Çok Etkileyen 3 Parametre: 1.DURATION | 2.MARRIED | 3.HOUSING
