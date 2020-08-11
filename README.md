@@ -1,5 +1,5 @@
 # iLAB_HangiKredi.com-Case_Study
-Hangikredi.com ML &amp; Analytics Vaka Çalışması | Case Study - İşe Alım Mülakatı
+Hangikredi.com ML &amp; Analytics Vaka Çalışması
 
 Bu GitHub repository'si İLAB Holding işe alım mülakatı için hazırlanmıştır.
 
